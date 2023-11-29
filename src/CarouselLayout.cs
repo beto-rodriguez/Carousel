@@ -179,8 +179,6 @@ public class CarouselLayout : AbsoluteLayout
 
             if (i < activeIndex)
             {
-                child.RotationY = 0;
-
                 // we are on the left wing
                 if (i < activeIndex - takeChildren)
                 {
