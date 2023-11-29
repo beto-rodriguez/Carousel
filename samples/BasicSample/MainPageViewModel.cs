@@ -5,7 +5,7 @@ namespace BasicSample;
 public partial class MainPageViewModel : ObservableObject
 {
     [ObservableProperty]
-    private int _activeItem = 0;
+    private int _activeItem = 4;
 
     [ObservableProperty]
     private double _wingStart = 100;
@@ -14,7 +14,7 @@ public partial class MainPageViewModel : ObservableObject
     private double _wingLength = 50;
 
     [ObservableProperty]
-    private int _takeChildren = 2;
+    private int _takeChildren = 3;
 
     [ObservableProperty]
     private double _scale = 0.8;

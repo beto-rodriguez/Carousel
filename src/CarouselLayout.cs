@@ -172,29 +172,26 @@ public class CarouselLayout : AbsoluteLayout
             var child = (VisualElement)Children[i];
 
             var distance = Math.Abs(activeIndex - i);
-
-            var wingDeformation = (distance - 1) / (takeChildren - 1);
-            var wingOffset = wingLength * wingDeformation;
+            var wingOffset = wingLength * (distance - 1) / takeChildren;
             var wingScale = scale - (distance - 1) * scaleStep;
 
             if (double.IsInfinity(wingOffset) || double.IsNaN(wingOffset)) wingOffset = 0;
 
             if (i < activeIndex)
             {
+                child.RotationY = 0;
+
                 // we are on the left wing
                 if (i < activeIndex - takeChildren)
                 {
                     // the element is ignored by the TakeChildren property
-                    _ = child.SetPosition(-cx, cy, duration, easing);
-                    _ = child.ScaleTo(scale, duration, easing);
-                    _ = child.RotateTo(0, duration, easing);
+                    _ = child.CarouselTransform(-cx, cy, -rotation, scale, duration, easing);
                     continue;
                 }
 
                 child.ZIndex = Children.Count - distance;
-                _ = child.SetPosition(cx - wingStart - wingOffset, cy, duration, easing);
-                _ = child.ScaleTo(wingScale, duration, easing);
-                _ = child.RotateTo(-rotation, duration, easing);
+                _ = child.CarouselTransform(
+                    cx - wingStart - wingOffset, cy, -rotation, wingScale, duration, easing);
             }
 
             if (i > activeIndex)
@@ -203,24 +200,19 @@ public class CarouselLayout : AbsoluteLayout
                 if (i > activeIndex + takeChildren)
                 {
                     // the element is ignored by the TakeChildren property
-                    _ = child.SetPosition(Width + cx, cy, duration, easing);
-                    _ = child.ScaleTo(scale, duration, easing);
-                    _ = child.RotateTo(0, duration, easing);
+                    _ = child.CarouselTransform(Width + cx, cy, rotation, scale, duration, easing);
                     continue;
                 }
 
                 child.ZIndex = Children.Count - distance;
-                _ = child.SetPosition(cx + wingStart + wingOffset, cy, duration, easing);
-                _ = child.ScaleTo(wingScale, duration, easing);
-                _ = child.RotateTo(rotation, duration, easing);
+                _ = child.CarouselTransform(
+                    cx + wingStart + wingOffset, cy, rotation, wingScale, duration, easing);
             }
 
             if (i == activeIndex)
             {
                 // this is the active element
-                _ = child.SetPosition(cx, cy, duration, easing);
-                _ = child.ScaleTo(1, duration, easing);
-                _ = child.RotateTo(0, duration, easing);
+                _ = child.CarouselTransform(cx, cy, 25, 1, duration, easing);
                 child.ZIndex = Children.Count;
             }
         }

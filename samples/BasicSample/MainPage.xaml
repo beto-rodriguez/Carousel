@@ -37,7 +37,7 @@
                 Grid.Row="3" Grid.Column="0"
                 Text="{Binding TakeChildren, StringFormat='Take children: {0:N0}'}" VerticalOptions="Center" />
             <Slider 
-                Grid.Row="3" Grid.Column="1" Minimum="0" Maximum="3" WidthRequest="100" 
+                Grid.Row="3" Grid.Column="1" Minimum="0" Maximum="5" WidthRequest="100" 
                 Value="{Binding TakeChildren}"/>
 
             <Label 
@@ -51,7 +51,7 @@
                  Grid.Row="5" Grid.Column="0"
                  Text="{Binding Rotation, StringFormat='inactive rotation: {0:N2}'}" VerticalOptions="Center" />
             <Slider 
-                 Grid.Row="5" Grid.Column="1" Minimum="0" Maximum="180" WidthRequest="100" 
+                 Grid.Row="5" Grid.Column="1" Minimum="-75" Maximum="75" WidthRequest="100" 
                  Value="{Binding Rotation}"/>
 
             <Label 
@@ -79,34 +79,34 @@
                 WingScaleStep="{Binding WingScaleStep}">
 
                 <Border Background="#f97316" Style="{StaticResource BorderStyle}">
-                    <Label Text="1" Style="{StaticResource LabelStyle}" />
+                    <Label Text="0" Style="{StaticResource LabelStyle}" />
                 </Border>
                 <Border Background="#64748b" Style="{StaticResource BorderStyle}">
-                    <Label Text="2" Style="{StaticResource LabelStyle}" />
+                    <Label Text="1" Style="{StaticResource LabelStyle}" />
                 </Border>
                 <Border Background="#22c55e" Style="{StaticResource BorderStyle}">
-                    <Label Text="3" Style="{StaticResource LabelStyle}" />
+                    <Label Text="2" Style="{StaticResource LabelStyle}" />
                 </Border>
                 <Border Background="#71717a" Style="{StaticResource BorderStyle}">
-                    <Label Text="4" Style="{StaticResource LabelStyle}" />
+                    <Label Text="3" Style="{StaticResource LabelStyle}" />
                 </Border>
                 <Border Background="#06b6d4" Style="{StaticResource BorderStyle}">
-                    <Label Text="5" Style="{StaticResource LabelStyle}" />
+                    <Label Text="4" Style="{StaticResource LabelStyle}" />
                 </Border>
                 <Border Background="#ef4444" Style="{StaticResource BorderStyle}">
-                    <Label Text="6" Style="{StaticResource LabelStyle}" />
+                    <Label Text="5" Style="{StaticResource LabelStyle}" />
                 </Border>
                 <Border Background="#6366f1" Style="{StaticResource BorderStyle}">
-                    <Label Text="7" Style="{StaticResource LabelStyle}" />
+                    <Label Text="6" Style="{StaticResource LabelStyle}" />
                 </Border>
                 <Border Background="#ec4899" Style="{StaticResource BorderStyle}">
-                    <Label Text="8" Style="{StaticResource LabelStyle}" />
+                    <Label Text="7" Style="{StaticResource LabelStyle}" />
                 </Border>
                 <Border Background="#3b82f6" Style="{StaticResource BorderStyle}">
-                    <Label Text="9" Style="{StaticResource LabelStyle}" />
+                    <Label Text="8" Style="{StaticResource LabelStyle}" />
                 </Border>
                 <Border Background="#78716c" Style="{StaticResource BorderStyle}">
-                    <Label Text="10" Style="{StaticResource LabelStyle}" />
+                    <Label Text="9" Style="{StaticResource LabelStyle}" />
                 </Border>
             </c:CarouselLayout>
         </Border>
