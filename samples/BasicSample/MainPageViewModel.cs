@@ -8,10 +8,10 @@ public partial class MainPageViewModel : ObservableObject
     private int _activeItem = 4;
 
     [ObservableProperty]
-    private double _wingStart = 100;
+    private double _wingStart = 80;
 
     [ObservableProperty]
-    private double _wingLength = 50;
+    private double _wingLength = 80;
 
     [ObservableProperty]
     private int _takeChildren = 3;
@@ -23,5 +23,5 @@ public partial class MainPageViewModel : ObservableObject
     private double _wingScaleStep = 0.05;
 
     [ObservableProperty]
-    private double _rotation = 0;
+    private double _rotation = 25;
 }

@@ -185,13 +185,13 @@ public class CarouselLayout : AbsoluteLayout
                 if (i < activeIndex - takeChildren)
                 {
                     // the element is ignored by the TakeChildren property
-                    _ = child.CarouselTransform(-cx, cy, -rotation, scale, duration, easing);
+                    _ = child.CarouselTransform(-cx, cy, rotation, scale, duration, easing);
                     continue;
                 }
 
                 child.ZIndex = Children.Count - distance;
                 _ = child.CarouselTransform(
-                    cx - wingStart - wingOffset, cy, -rotation, wingScale, duration, easing);
+                    cx - wingStart - wingOffset, cy, rotation, wingScale, duration, easing);
             }
 
             if (i > activeIndex)
@@ -200,19 +200,19 @@ public class CarouselLayout : AbsoluteLayout
                 if (i > activeIndex + takeChildren)
                 {
                     // the element is ignored by the TakeChildren property
-                    _ = child.CarouselTransform(Width + cx, cy, rotation, scale, duration, easing);
+                    _ = child.CarouselTransform(Width + cx, cy, -rotation, scale, duration, easing);
                     continue;
                 }
 
                 child.ZIndex = Children.Count - distance;
                 _ = child.CarouselTransform(
-                    cx + wingStart + wingOffset, cy, rotation, wingScale, duration, easing);
+                    cx + wingStart + wingOffset, cy, -rotation, wingScale, duration, easing);
             }
 
             if (i == activeIndex)
             {
                 // this is the active element
-                _ = child.CarouselTransform(cx, cy, 25, 1, duration, easing);
+                _ = child.CarouselTransform(cx, cy, 0, 1, duration, easing);
                 child.ZIndex = Children.Count;
             }
         }
