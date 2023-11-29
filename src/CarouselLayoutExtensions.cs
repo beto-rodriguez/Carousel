@@ -19,7 +19,7 @@ public static class CarouselLayoutExtensions
         [
             visual.TranslateTo(centeredX, centeredY, duration, easing),
             visual.ScaleTo(scale, duration, easing),
-            visual.RotateYTo(rotation, duration, easing),
+            visual.RotateTo(rotation, duration, easing),
         ];
     }
 }

@@ -58,64 +58,62 @@
                 </Border>
             </c:CarouselLayout>
         </Border>
+
+
+        <Grid ColumnDefinitions="180, 80"
+              RowDefinitions="20, 20, 20,20, 20, 20, 20"
+              HorizontalOptions="Center">
+            <Label 
+                Grid.Row="0" Grid.Column="0" 
+                Text="{Binding ActiveItem, StringFormat='Active item: {0:N0}'}" VerticalOptions="Center" />
+            <Slider 
+                Grid.Row="0" Grid.Column="1" Minimum="0" Maximum="9"  WidthRequest="100" 
+                Value="{Binding ActiveItem}"/>
+
+            <Label 
+                Grid.Row="1" Grid.Column="0" 
+                Text="{Binding WingStart, StringFormat='Wing start: {0:N0}'}" VerticalOptions="Center" />
+            <Slider 
+                Grid.Row="1" Grid.Column="1" Minimum="0" Maximum="350"  WidthRequest="100" 
+                Value="{Binding WingStart}"/>
+
+            <Label 
+                Grid.Row="2" Grid.Column="0"
+                Text="{Binding WingLength, StringFormat='Wing length: {0:N0}'}" VerticalOptions="Center" />
+            <Slider 
+                Grid.Row="2" Grid.Column="1" Minimum="0" Maximum="200" WidthRequest="100" 
+                Value="{Binding WingLength}"/>
+
+            <Label 
+                Grid.Row="3" Grid.Column="0"
+                Text="{Binding TakeChildren, StringFormat='Take children: {0:N0}'}" VerticalOptions="Center" />
+            <Slider 
+                Grid.Row="3" Grid.Column="1" Minimum="0" Maximum="5" WidthRequest="100" 
+                Value="{Binding TakeChildren}"/>
+
+            <Label 
+                Grid.Row="4" Grid.Column="0"
+                Text="{Binding Scale, StringFormat='Inactive scale: {0:N2}'}" VerticalOptions="Center" />
+            <Slider 
+                Grid.Row="4" Grid.Column="1" Minimum="0" Maximum="1" WidthRequest="100" 
+                Value="{Binding Scale}"/>
+
+            <Label 
+                 Grid.Row="5" Grid.Column="0"
+                 Text="{Binding Rotation, StringFormat='inactive rotation: {0:N2}'}" VerticalOptions="Center" />
+            <Slider 
+                 Grid.Row="5" Grid.Column="1" Minimum="-75" Maximum="75" WidthRequest="100" 
+                 Value="{Binding Rotation}"/>
+
+            <Label 
+                Grid.Row="6" Grid.Column="0"
+                Text="{Binding WingScaleStep, StringFormat='wing scale step: {0:N2}'}" VerticalOptions="Center" />
+            <Slider 
+                Grid.Row="6" Grid.Column="1" Minimum="0" Maximum="0.3" WidthRequest="100" 
+                Value="{Binding WingScaleStep}"/>
+        </Grid>
     </Grid>
 
-    <!-- controls to modify the carousel properties -->
-    <!--
-<Grid ColumnDefinitions="180, 80"
-      RowDefinitions="20, 20, 20,20, 20, 20, 20"
-      HorizontalOptions="Center">
-    <Label 
-        Grid.Row="0" Grid.Column="0" 
-        Text="{Binding ActiveItem, StringFormat='Active item: {0:N0}'}" VerticalOptions="Center" />
-    <Slider 
-        Grid.Row="0" Grid.Column="1" Minimum="0" Maximum="9"  WidthRequest="100" 
-        Value="{Binding ActiveItem}"/>
-
-    <Label 
-        Grid.Row="1" Grid.Column="0" 
-        Text="{Binding WingStart, StringFormat='Wing start: {0:N0}'}" VerticalOptions="Center" />
-    <Slider 
-        Grid.Row="1" Grid.Column="1" Minimum="0" Maximum="350"  WidthRequest="100" 
-        Value="{Binding WingStart}"/>
-
-    <Label 
-        Grid.Row="2" Grid.Column="0"
-        Text="{Binding WingLength, StringFormat='Wing length: {0:N0}'}" VerticalOptions="Center" />
-    <Slider 
-        Grid.Row="2" Grid.Column="1" Minimum="0" Maximum="200" WidthRequest="100" 
-        Value="{Binding WingLength}"/>
-
-    <Label 
-        Grid.Row="3" Grid.Column="0"
-        Text="{Binding TakeChildren, StringFormat='Take children: {0:N0}'}" VerticalOptions="Center" />
-    <Slider 
-        Grid.Row="3" Grid.Column="1" Minimum="0" Maximum="5" WidthRequest="100" 
-        Value="{Binding TakeChildren}"/>
-
-    <Label 
-        Grid.Row="4" Grid.Column="0"
-        Text="{Binding Scale, StringFormat='Inactive scale: {0:N2}'}" VerticalOptions="Center" />
-    <Slider 
-        Grid.Row="4" Grid.Column="1" Minimum="0" Maximum="1" WidthRequest="100" 
-        Value="{Binding Scale}"/>
-    
-    <Label 
-         Grid.Row="5" Grid.Column="0"
-         Text="{Binding Rotation, StringFormat='inactive rotation: {0:N2}'}" VerticalOptions="Center" />
-    <Slider 
-         Grid.Row="5" Grid.Column="1" Minimum="-75" Maximum="75" WidthRequest="100" 
-         Value="{Binding Rotation}"/>
-
-    <Label 
-        Grid.Row="6" Grid.Column="0"
-        Text="{Binding WingScaleStep, StringFormat='wing scale step: {0:N2}'}" VerticalOptions="Center" />
-    <Slider 
-        Grid.Row="6" Grid.Column="1" Minimum="0" Maximum="0.3" WidthRequest="100" 
-        Value="{Binding WingScaleStep}"/>
-</Grid>
--->
-    
     <ContentPage.Resources>
         <Style x:Key="BorderStyle" TargetType="Border">
             <Setter Property="WidthRequest" Value="150" />
