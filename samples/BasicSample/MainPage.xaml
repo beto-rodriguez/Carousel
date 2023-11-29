@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:c="clr-namespace:Carousel;assembly=Carousel"
+    xmlns:l="clr-namespace:BasicSample"
+    x:Class="BasicSample.MainPage"
+    x:DataType="l:MainPageViewModel"
+    Background="#fafafa">
+
+    <Grid RowDefinitions="Auto, *, 50">
+        <Grid ColumnDefinitions="150, 100"
+              RowDefinitions="30, 30, 30, 30, 30, 30, 30"
+              HorizontalOptions="Center">
+            <Label 
+                Grid.Row="0" Grid.Column="0" 
+                Text="{Binding ActiveItem, StringFormat='Active item: {0:N0}'}" VerticalOptions="Center" />
+            <Slider 
+                Grid.Row="0" Grid.Column="1" Minimum="0" Maximum="9"  WidthRequest="100" 
+                Value="{Binding ActiveItem}"/>
+
+            <Label 
+                Grid.Row="1" Grid.Column="0" 
+                Text="{Binding WingStart, StringFormat='Wing start: {0:N0}'}" VerticalOptions="Center" />
+            <Slider 
+                Grid.Row="1" Grid.Column="1" Minimum="0" Maximum="350"  WidthRequest="100" 
+                Value="{Binding WingStart}"/>
+
+            <Label 
+                Grid.Row="2" Grid.Column="0"
+                Text="{Binding WingLength, StringFormat='Wing length: {0:N0}'}" VerticalOptions="Center" />
+            <Slider 
+                Grid.Row="2" Grid.Column="1" Minimum="0" Maximum="200" WidthRequest="100" 
+                Value="{Binding WingLength}"/>
+
+            <Label 
+                Grid.Row="3" Grid.Column="0"
+                Text="{Binding TakeChildren, StringFormat='Take children: {0:N0}'}" VerticalOptions="Center" />
+            <Slider 
+                Grid.Row="3" Grid.Column="1" Minimum="0" Maximum="3" WidthRequest="100" 
+                Value="{Binding TakeChildren}"/>
+
+            <Label 
+                Grid.Row="4" Grid.Column="0"
+                Text="{Binding Scale, StringFormat='Inactive scale: {0:N2}'}" VerticalOptions="Center" />
+            <Slider 
+                Grid.Row="4" Grid.Column="1" Minimum="0" Maximum="1" WidthRequest="100" 
+                Value="{Binding Scale}"/>
+            
+            <Label 
+                 Grid.Row="5" Grid.Column="0"
+                 Text="{Binding Rotation, StringFormat='inactive rotation: {0:N2}'}" VerticalOptions="Center" />
+            <Slider 
+                 Grid.Row="5" Grid.Column="1" Minimum="0" Maximum="180" WidthRequest="100" 
+                 Value="{Binding Rotation}"/>
+
+            <Label 
+                Grid.Row="6" Grid.Column="0"
+                Text="{Binding WingScaleStep, StringFormat='wing scale step: {0:N2}'}" VerticalOptions="Center" />
+            <Slider 
+                Grid.Row="6" Grid.Column="1" Minimum="0" Maximum="0.3" WidthRequest="100" 
+                Value="{Binding WingScaleStep}"/>
+        </Grid>
+
+        <Border
+            Grid.Row="1"
+            Background="White"
+            VerticalOptions="Fill"
+            HorizontalOptions="Fill"
+            MaximumWidthRequest="1200">
+
+            <c:CarouselLayout
+                ActiveItem="{Binding ActiveItem}"
+                WingLength="{Binding WingLength}"
+                WingStart="{Binding WingStart}"
+                TakeChildren="{Binding TakeChildren}"
+                InactiveScale="{Binding Scale}"
+                InactiveRotation="{Binding Rotation}"
+                WingScaleStep="{Binding WingScaleStep}">
+
+                <Border Background="#f97316" Style="{StaticResource BorderStyle}">
+                    <Label Text="1" Style="{StaticResource LabelStyle}" />
+                </Border>
+                <Border Background="#64748b" Style="{StaticResource BorderStyle}">
+                    <Label Text="2" Style="{StaticResource LabelStyle}" />
+                </Border>
+                <Border Background="#22c55e" Style="{StaticResource BorderStyle}">
+                    <Label Text="3" Style="{StaticResource LabelStyle}" />
+                </Border>
+                <Border Background="#71717a" Style="{StaticResource BorderStyle}">
+                    <Label Text="4" Style="{StaticResource LabelStyle}" />
+                </Border>
+                <Border Background="#06b6d4" Style="{StaticResource BorderStyle}">
+                    <Label Text="5" Style="{StaticResource LabelStyle}" />
+                </Border>
+                <Border Background="#ef4444" Style="{StaticResource BorderStyle}">
+                    <Label Text="6" Style="{StaticResource LabelStyle}" />
+                </Border>
+                <Border Background="#6366f1" Style="{StaticResource BorderStyle}">
+                    <Label Text="7" Style="{StaticResource LabelStyle}" />
+                </Border>
+                <Border Background="#ec4899" Style="{StaticResource BorderStyle}">
+                    <Label Text="8" Style="{StaticResource LabelStyle}" />
+                </Border>
+                <Border Background="#3b82f6" Style="{StaticResource BorderStyle}">
+                    <Label Text="9" Style="{StaticResource LabelStyle}" />
+                </Border>
+                <Border Background="#78716c" Style="{StaticResource BorderStyle}">
+                    <Label Text="10" Style="{StaticResource LabelStyle}" />
+                </Border>
+            </c:CarouselLayout>
+        </Border>
+    </Grid>
+
+    <ContentPage.Resources>
+        <Style x:Key="BorderStyle" TargetType="Border">
+            <Setter Property="WidthRequest" Value="250" />
+            <Setter Property="HeightRequest" Value="250" />
+            <Setter Property="StrokeThickness" Value="0"/>
+            <Setter Property="StrokeShape" >
+                <Setter.Value>
+                    <RoundRectangle CornerRadius="10"></RoundRectangle>
+                </Setter.Value>
+            </Setter>
+            <!--
+
+            looks much better with shadows
+            but it seems that there is a performance issue here :(
+
+            <Setter Property="Shadow" >
+                <Setter.Value>
+                    <Shadow Brush="Black" Offset="0,0" Radius="5" Opacity="0.35" />
+                </Setter.Value>
+            </Setter>
+            -->
+        </Style>
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="FontSize" Value="120" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+    </ContentPage.Resources>
+
+</ContentPage>

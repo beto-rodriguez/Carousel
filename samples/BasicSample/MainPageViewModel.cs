@@ -1,0 +1,27 @@
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace BasicSample;
+
+public partial class MainPageViewModel : ObservableObject
+{
+    [ObservableProperty]
+    private int _activeItem = 0;
+
+    [ObservableProperty]
+    private double _wingStart = 100;
+
+    [ObservableProperty]
+    private double _wingLength = 50;
+
+    [ObservableProperty]
+    private int _takeChildren = 2;
+
+    [ObservableProperty]
+    private double _scale = 0.8;
+
+    [ObservableProperty]
+    private double _wingScaleStep = 0.05;
+
+    [ObservableProperty]
+    private double _rotation = 0;
+}
